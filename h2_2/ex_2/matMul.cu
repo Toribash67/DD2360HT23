@@ -91,7 +91,7 @@ int main(int argc, char **argv) {
 
 
   std::clock_t start;
-  start = std::clock();/*
+  start = std::clock();
   for (int i = 0; i < numCcolumns; ++i)
   {
     for (int j = 0; j < numCrows; ++j)
@@ -101,7 +101,7 @@ int main(int argc, char **argv) {
         resultRef[i + j*numCcolumns] += hostA[k+j*numAcolumns]*hostB[i+k*numBcolumns];
       }
     }
-  }*/
+  }
   printf("CPU matmul: %f ms\n",(std::clock() - start) / (double)(CLOCKS_PER_SEC / 1000));
   //@@ Insert code below to allocate GPU memory here
   cudaMalloc(&deviceA, numArows*numAcolumns*sizeof(DataType));
